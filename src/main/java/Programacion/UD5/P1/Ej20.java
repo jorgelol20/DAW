@@ -1,4 +1,4 @@
-package Programacion.UD5;
+package Programacion.UD5.P1;
 import javax.swing.*;
 import java.text.MessageFormat;
 

@@ -1,4 +1,4 @@
-package Programacion.UD5;
+package Programacion.UD5.P1;
 
 import java.util.Scanner;
 
@@ -14,8 +14,10 @@ public class Ej16 {
             System.out.println("Bien");
         }else if(nota<9){
             System.out.println("Notable");
-        }else{
+        }else if(nota<=10){
             System.out.println("Sobresaliente");
+        }else{
+            System.out.println("No valida");
         }
     }
 }
