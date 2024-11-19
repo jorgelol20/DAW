@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Ej16 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Introduce primer día: ");
+        System.out.print("Introduce primer día: ");
         String diaSem = sc.nextLine();
         String primerDia = "";
         int numDia1 = 0;
@@ -33,26 +33,25 @@ public class Ej16 {
                 primerDia = "Viernes";
                 numDia1 = 5;
                 salir = true;
-            } else if (diaSem.equals("6") || diaSem.equalsIgnoreCase("Sabado")) {
-                primerDia = "Sabado";
+            } else if (diaSem.equals("6") || diaSem.equalsIgnoreCase("Sábado") || diaSem.equalsIgnoreCase("Sabado") ) {
+                primerDia = "Sábado";
                 numDia1 = 6;
                 salir = true;
             } else if (diaSem.equals("7") || diaSem.equalsIgnoreCase("Domingo")) {
                 primerDia = "Domingo";
-                numDia1 = 7;
                 salir = true;
             } else {
-                System.out.println("Introduce un día valido: ");
+                System.out.print("Introduce un día valido: ");
                 diaSem = sc.next();
             }
         }
 
         //Hora día 1
-        System.out.println("Introduce la hora del " + primerDia + ": ");
+        System.out.print("Introduce la hora del " + primerDia + ": ");
         int horaDia1 = sc.nextInt();
         while (true) {
             if (horaDia1 < 0 || horaDia1 > 23) {
-                System.out.println("Introduce un hora valida para el " + primerDia + ": ");
+                System.out.print("Introduce un hora valida para el " + primerDia + ": ");
                 horaDia1 = sc.nextInt();
             } else {
                 break;
@@ -62,7 +61,7 @@ public class Ej16 {
         String segundoDia = "";
         int numDia2 = 0;
         while (true) {
-            System.out.println("Introduce el segundo día: ");
+            System.out.print("Introduce el segundo día: ");
             diaSem = sc.next();
             if (diaSem.equals("1") || diaSem.equalsIgnoreCase("Lunes")) {
                 segundoDia = "Lunes";
@@ -104,33 +103,44 @@ public class Ej16 {
                 } else {
                     break;
                 }
-            } else if (diaSem.equals("6") || diaSem.equalsIgnoreCase("Sabado")) {
+            } else if (diaSem.equals("6") || diaSem.equalsIgnoreCase("Sabado") || diaSem.equalsIgnoreCase("Sábado")) {
                 segundoDia = "Sabado";
                 numDia2 = 6;
-                if (numDia2 < numDia1) {
-                    System.out.println(MessageFormat.format("Error, el {0} es anterior al {1}", segundoDia, primerDia));
-                } else {
-                    break;
-                }
+                break;
             } else if (diaSem.equals("7") || diaSem.equalsIgnoreCase("Domingo")) {
                 segundoDia = "Domingo";
-                break;
+                if(numDia2 < numDia1){
+                    System.out.println(MessageFormat.format("Error, el {0} es anterior al {1}", segundoDia, primerDia));
+                }else{
+                    break;
+                }
             } else {
                 System.out.println("Introduce un día valido");
             }
         }
         //Hora día 2
-        System.out.println("Introduce la hora del " + segundoDia + ": ");
+        System.out.print("Introduce la hora del " + segundoDia + ": ");
         int horaDia2 = sc.nextInt();
         while (true) {
             if (horaDia2 < 0 || horaDia2 > 23) {
-                System.out.println("Introduce un hora valida para el " + primerDia + ": ");
+                System.out.print("Introduce un hora valida para el " + primerDia + ": ");
                 horaDia2 = sc.nextInt();
             } else {
                 break;
             }
         }
         //Sacar las horas
-
+        int horasRestantes;
+        if (numDia2 != numDia1) {
+            int horasRestdia1 = 24 - horaDia1;
+            if(numDia2 == 0){
+                numDia2 = 7;
+            }
+            int diasRestantes = numDia2 - numDia1;
+            horasRestantes = horasRestdia1 + (24 * (diasRestantes - 1)) + horaDia2;
+        }else{
+            horasRestantes = horaDia2 - horaDia1;
+        }
+        System.out.println(MessageFormat.format("Entre las {0}:00h del {1} y las {2}:00h del {3} hay {4} horas/s",horaDia1,primerDia,horaDia2,segundoDia,horasRestantes));
     }
 }
