@@ -136,8 +136,8 @@ public class Ej16 {
             if(numDia2 == 0){
                 numDia2 = 7;
             }
-            int diasRestantes = numDia2 - numDia1;
-            horasRestantes = horasRestdia1 + (24 * (diasRestantes - 1)) + horaDia2;
+            int diasRestantes = numDia2 - numDia1 - 1;
+            horasRestantes = horasRestdia1 + (24 * (diasRestantes)) + horaDia2;
         }else{
             horasRestantes = horaDia2 - horaDia1;
         }
