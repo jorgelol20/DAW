@@ -141,6 +141,6 @@ public class Ej16 {
         }else{
             horasRestantes = horaDia2 - horaDia1;
         }
-        System.out.println(MessageFormat.format("Entre las {0}:00h del {1} y las {2}:00h del {3} hay {4} horas/s",horaDia1,primerDia,horaDia2,segundoDia,horasRestantes));
+        System.out.println(MessageFormat.format("Entre las {0}:00h del {1} y las {2}:00h del {3} hay {4} hora/s",horaDia1,primerDia,horaDia2,segundoDia,horasRestantes));
     }
 }
