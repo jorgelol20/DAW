@@ -1,4 +1,4 @@
-package Programacion.UD6.C;
+package Programacion.UD6_1.C;
 
 public class EjemploXD {
     public static void main(String[] args) {

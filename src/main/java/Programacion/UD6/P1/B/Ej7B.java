@@ -1,4 +1,4 @@
-package Programacion.UD6.B;
+package Programacion.UD6_1.B;
 
 import java.util.Scanner;
 

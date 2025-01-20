@@ -1,6 +1,6 @@
-package Programacion.UD6.A;
+package Programacion.UD6_1.A;
 
-public class Ej7 {
+public class Ej8 {
     public static void main(String[] args) {
 
     }

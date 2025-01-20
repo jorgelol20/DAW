@@ -1,9 +1,7 @@
-package Programacion.UD6.C;
+package Programacion.UD6_1.C;
 
-import java.sql.SQLOutput;
 import java.text.MessageFormat;
 import java.util.Arrays;
-import java.util.Random;
 
 public class Ej8C {
     public static void main(String[] args) {
@@ -12,6 +10,7 @@ public class Ej8C {
         int[][] arrayAlturas = new int[4][10];
         int[][] calculos = new int[4][3];
         int[] arrayMedia = new int[4];
+
         int minAltura = 140;
         int maxAltura = 210;
 
@@ -39,10 +38,12 @@ public class Ej8C {
         calculos[1][0] = arrayMedia[1];
         calculos[2][0] = arrayMedia[2];
         calculos[3][0] = arrayMedia[3];
+
         calculos[0][1] = arrayAlturas[0][0];
         calculos[1][1] = arrayAlturas[1][0];
         calculos[2][1] = arrayAlturas[2][0];
         calculos[3][1] = arrayAlturas[3][0];
+
         calculos[0][2] = arrayAlturas[0][9];
         calculos[1][2] = arrayAlturas[1][9];
         calculos[2][2] = arrayAlturas[2][9];
